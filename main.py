@@ -1,5 +1,5 @@
 import requests
-
+import json
 
 print('##########################')
 print('### Consulta de Moedas ###')
@@ -23,7 +23,7 @@ def main():
         print('Opcao invalida!')
         exit()
 
-    money_data = request.json()
+    money_data = json.loads(request.text)
 
     if 'status' not in money_data:
         print('Dados do(a) ' + money_data[0]['name'])
